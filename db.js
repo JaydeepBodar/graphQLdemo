@@ -13,5 +13,6 @@ const db = {};
 db.sequelize = sequelize;
 db.employee = require("./model/Employee")(DataTypes, sequelize);
 db.offices = require("./model/Offices")(DataTypes, sequelize);
-db.sequelize.sync({force:false})
+db.customers=require("./model/Customer")(DataTypes, sequelize);
+db.sequelize.sync({ force: false });  
 module.exports = db;
