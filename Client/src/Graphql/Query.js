@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 export const getUser_Details = gql`
   {
-    employee {
+    employee{
       firstName
       lastName
       extension

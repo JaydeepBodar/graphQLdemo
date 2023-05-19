@@ -14,7 +14,7 @@ const Userdata = new GraphQLObjectType({
     jobTitle: { type: GraphQLString },
     phoneNo: { type: GraphQLString },
     email: { type: GraphQLString },
-    reportsTo: { type: GraphQLInt },
+    reportsTo: { type: GraphQLString },
     extension: { type: GraphQLString },
     officeCode: { type: GraphQLString },
   }),

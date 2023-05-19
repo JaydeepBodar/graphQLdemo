@@ -7,15 +7,16 @@ const args = {
   extension: { type: GraphQLString },
   email: { type: GraphQLString },
   officeCode: { type: GraphQLString },
-  reportsTo: { type: GraphQLInt },
+  reportsTo: { type: GraphQLString },
   jobTitle: { type: GraphQLString },
 };
 const employeeListdata = {
   type: Usertype,
   args: args,
   resolve: async (parent, args) => {
+    console.log("object")
     let { dbConfig } = parent;
-    await dbConfig.employee.create({
+    const data=await dbConfig.employee.create({
       firstName: args.firstName,
       lastName: args.lastName,
       extension: args.extension,
@@ -24,7 +25,8 @@ const employeeListdata = {
       reportsTo: args.reportsTo,
       jobTitle: args.jobTitle,
     });
-    return args;
+    console.log("data",data)
+    return data
   },
 };
 const updateUser = {
